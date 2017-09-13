@@ -14,8 +14,8 @@ import {
   Options as ResourceBackendOptions
 } from '@optics/prism/security/backend/Resource';
 
-type Table = TableDescription & ExtendedTableDescription;
-type View = ViewDescription & ExtendedViewDescription;
+export type Table = TableDescription & ExtendedTableDescription;
+export type View = ViewDescription & ExtendedViewDescription;
 
 export interface ResourceBackendConfiguration {
   merge: Partial<ResourceBackend>;
@@ -43,7 +43,7 @@ export interface ActionMapEntry {
   backend: Partial<ResourceBackendConfiguration>;
 }
 
-type ActionMapEntryKey = 'readItem' | 'readCollection' | 'createItem' | 'updateItem' | 'deleteItem';
+export type ActionMapEntryKey = 'readItem' | 'readCollection' | 'createItem' | 'updateItem' | 'deleteItem';
 
 export interface ActionMap {
   [tableName: string]: Partial<ActionMapEntry>;

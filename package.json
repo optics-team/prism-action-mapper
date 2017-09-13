@@ -4,7 +4,8 @@
   "description": "Automatically configure and register Prism actions based on declarative configuration",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "jest --no-cache",
+    "build": "tsc --declaration"
   },
   "repository": {
     "type": "git",
