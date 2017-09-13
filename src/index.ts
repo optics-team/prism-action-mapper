@@ -98,7 +98,7 @@ export class ActionMapper {
       return;
     }
 
-    this._server.log('info', `Registering action '${name}' on resource '${resource.name}'`);
+    this._server.log('info', `Registering action '${key}' on resource '${resource.name}'`);
 
     const action = new ActionClass(resource, config.options);
 
