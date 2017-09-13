@@ -2,7 +2,7 @@
   "name": "@optics/prism-action-mapper",
   "version": "0.0.0",
   "description": "Automatically configure and register Prism actions based on declarative configuration",
-  "main": "index.js",
+  "main": "dist/index.js",
   "scripts": {
     "test": "jest --no-cache --coverage",
     "build": "tsc --declaration",
