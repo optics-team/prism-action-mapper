@@ -13,7 +13,7 @@ Instead of manually configuring each Action according to the entities they are a
 Install into your existing Prism project with:
 
 ```bash
-$ npm install --save prism-action-mapper
+$ npm install --save @optics/prism-action-mapper
 ```
 
 Declare an Action Map and ActionMapper instance in your application:
