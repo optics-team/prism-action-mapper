@@ -1,0 +1,47 @@
+{
+  "name": "prism-action-mapper",
+  "version": "0.0.0",
+  "description": "Automatically configure and register Prism actions based on declarative configuration",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/optics-team/prism-action-mapper.git"
+  },
+  "author": "Warren Seymour",
+  "license": "BSD-3-Clause",
+  "bugs": {
+    "url": "https://github.com/optics-team/prism-action-mapper/issues"
+  },
+  "homepage": "https://github.com/optics-team/prism-action-mapper#readme",
+  "peerDependencies": {
+    "@optics/prism": "^2.0.0"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "@optics/codestyle": "^1.0.0",
+    "@optics/prism": "^2.0.0",
+    "@types/hapi": "^16.1.9",
+    "@types/jest": "^20.0.8",
+    "collimator": "^6.0.0",
+    "jest": "^21.0.2",
+    "ts-jest": "^21.0.0",
+    "tslint": "^5.7.0",
+    "tslint-consistent-codestyle": "^1.6.0"
+  },
+  "jest": {
+    "notify": true,
+    "mapCoverage": true,
+    "transform": {
+      ".ts": "../node_modules/ts-jest/preprocessor.js"
+    },
+    "rootDir": "src",
+    "testRegex": "(/__tests__/.*|\\.(test|spec))\\.ts$",
+    "moduleFileExtensions": [
+      "ts",
+      "js"
+    ]
+  }
+}
