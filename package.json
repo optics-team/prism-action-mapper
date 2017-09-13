@@ -7,7 +7,7 @@
     "test": "jest --no-cache --coverage",
     "build": "tsc --declaration",
     "push-coverage": "cat src/coverage/lcov.info | coveralls",
-    "semantic-release": "semantic-release pre && npm publish && semantic-release post"
+    "semantic-release": "semantic-release pre && npm publish --access=public && semantic-release post"
   },
   "repository": {
     "type": "git",
