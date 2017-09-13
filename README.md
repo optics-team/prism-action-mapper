@@ -1,6 +1,6 @@
 [![Commitizen friendly](https://img.shields.io/badge/commitizen-friendly-brightgreen.svg)](http://commitizen.github.io/cz-cli/)
-
 [![Build Status](https://travis-ci.org/optics-team/prism-action-mapper.svg?branch=master)](https://travis-ci.org/optics-team/prism-action-mapper)
+[![Coverage Status](https://coveralls.io/repos/github/optics-team/prism-action-mapper/badge.svg?branch=master)](https://coveralls.io/github/optics-team/prism-action-mapper?branch=master)
 
 # Prism Action Mapper
 

@@ -4,8 +4,9 @@
   "description": "Automatically configure and register Prism actions based on declarative configuration",
   "main": "index.js",
   "scripts": {
-    "test": "jest --no-cache",
+    "test": "jest --no-cache --coverage",
     "build": "tsc --declaration",
+    "push-coverage": "cat src/coverage/lcov.info | coveralls",
     "semantic-release": "semantic-release pre && npm publish && semantic-release post"
   },
   "repository": {
@@ -28,6 +29,7 @@
     "@types/hapi": "^16.1.9",
     "@types/jest": "^20.0.8",
     "collimator": "^6.0.0",
+    "coveralls": "^2.13.1",
     "cz-conventional-changelog": "^2.0.0",
     "jest": "^21.0.2",
     "semantic-release": "^7.0.2",

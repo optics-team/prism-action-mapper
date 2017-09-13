@@ -20,6 +20,7 @@ script:
   - npm run build
 
 after_success:
+  - npm run push-coverage
   - npm run semantic-release
 
 branches:
