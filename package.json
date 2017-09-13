@@ -32,7 +32,8 @@
     "semantic-release": "^7.0.2",
     "ts-jest": "^21.0.0",
     "tslint": "^5.7.0",
-    "tslint-consistent-codestyle": "^1.6.0"
+    "tslint-consistent-codestyle": "^1.6.0",
+    "typescript": "^2.5.2"
   },
   "jest": {
     "notify": true,
