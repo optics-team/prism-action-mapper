@@ -46,14 +46,18 @@ export interface ActionMapEntry {
 export type ActionMapEntryKey = 'readItem' | 'readCollection' | 'createItem' | 'updateItem' | 'deleteItem';
 
 export interface ActionMap {
-  [tableName: string]: Partial<ActionMapEntry>;
+  [tableName: string]: Partial<ActionMapEntry> | ((entity: Table | View) => Partial<ActionMapEntry>);
 }
 
 export class ActionMapper {
   constructor(protected _server: Server, protected _source: Source, protected _actionMap: ActionMap) { }
 
   register(entity: Table | View) {
-    const mapEntry = this._actionMap[entity.name];
+    let mapEntry = this._actionMap[entity.name];
+
+    if (typeof mapEntry === 'function') {
+      mapEntry = mapEntry(entity);
+    }
 
     if (!mapEntry) {
       return;
@@ -88,7 +92,7 @@ export class ActionMapper {
 
   protected _registerAction<K extends ActionMapEntryKey>(
     resource: Resource,
-    mapEntry: ActionMap[K],
+    mapEntry: Partial<ActionMapEntry>,
     key: K,
     ActionClass: new (...args: any[]) => Action
   ) {

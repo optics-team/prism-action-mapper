@@ -193,3 +193,48 @@ describe('when action entries are specified', () => {
     });
   });
 });
+
+describe('when an actionMap entry is a function', () => {
+  let mapEntry: jest.Mock<any>;
+  let entity: any;
+
+  beforeEach(() => {
+    mapEntry = jest.fn();
+    entity = {
+      name: 'test_table',
+      primaryKeys: ['id']
+    };
+  });
+
+  it('passes the Collimator object as the first parameter', () => {
+    new ActionMapper(server, source, { test_table: mapEntry }).register(entity);
+    expect(mapEntry).toHaveBeenCalledWith(entity);
+  });
+
+  describe('when the actionMap function returns a falsy value', () => {
+    it('does nothing', () => {
+      new ActionMapper(server, source, { test_table: mapEntry }).register(entity);
+      expect(registerAction).not.toHaveBeenCalled();
+    });
+  });
+
+  describe('when the actionMap function returns a truthy value', () => {
+    it('uses the returned value for registration', () => {
+      mapEntry.mockImplementation(table => ({
+        resource: {
+          primaryKeys: [...entity.primaryKeys, 'extra_key']
+        },
+        readCollection: {}
+      }));
+
+      new ActionMapper(server, source, { test_table: mapEntry }).register(entity);
+      const readCollection = registerAction.mock.calls[0][0];
+
+      expect(readCollection._resource).toEqual({
+        name: 'test_table',
+        primaryKeys: ['id', 'extra_key'],
+        source: 'mockSource'
+      });
+    });
+  });
+});
